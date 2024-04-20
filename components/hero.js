@@ -12,7 +12,7 @@ const Hero = () => {
               Free Landing Page Template for startups
             </h1>
             <p className='py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300'>
-              Nextly is a free landing page & marketing website template for
+              Nutriplate is a free landing page & marketing website template for
               startups and indie projects. Its built with Next.js & TailwindCSS.
               And its completely open-source.
             </p>

@@ -1,12 +1,12 @@
-import { ThemeProvider } from "next-themes";
-import "../css/tailwind.css";
+import { ThemeProvider } from 'next-themes'
+import '../css/tailwind.css'
 
-function MyApp({ Component, pageProps }) {
+function MyApp ({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute='class' defaultTheme='light'>
       <Component {...pageProps} />
     </ThemeProvider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

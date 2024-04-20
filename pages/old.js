@@ -21,10 +21,12 @@ const Old = () => {
   return (
     <>
       <Head>
-        <title>Nextly - Free Nextjs & TailwindCSS Landing Page Template</title>
+        <title>
+          Nutriplate - Free Nextjs & TailwindCSS Landing Page Template
+        </title>
         <meta
           name='description'
-          content='Nextly is a free landing page template built with next.js & Tailwind CSS'
+          content='Nutriplate is a free landing page template built with next.js & Tailwind CSS'
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -32,12 +34,12 @@ const Old = () => {
       <Navbar />
       <Hero />
       <SectionTitle
-        pretitle='Nextly Benefits'
+        pretitle='Nutriplate Benefits'
         title=' Why should you use this landing page'
       >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        Nutriplate is a free landing page & marketing website template for
+        startups and indie projects. Its built with Next.js & TailwindCSS. And
+        its completely open-source.
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos='right' data={benefitTwo} />

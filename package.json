@@ -1,7 +1,7 @@
 {
-  "name": "nextly-template",
+  "name": "nutriplate",
   "version": "0.1.0",
-  "description": "Nextly Landing Page Template",
+  "description": "Nutriplate Landing Page ",
   "private": true,
   "scripts": {
     "dev": "next dev",

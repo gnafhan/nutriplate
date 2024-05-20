@@ -5,12 +5,30 @@ import { Disclosure } from '@headlessui/react'
 
 const Navbar = () => {
   const navigation = [
-    'Beranda',
-    'Info/Kesehatan',
-    'Program Diet',
-    'Kontent Anak',
-    'Kumpulan Resep',
-    'Tentang Kami'
+    {
+      name: 'Beranda',
+      href: '/',
+    },
+    {
+      name: 'Tentang Kami',
+      href: '/about',
+    },
+    {
+      name: 'Info/Kesehatan',
+      href: '/info-kesehatan',
+    },
+    {
+      name: 'Program Diet',
+      href: '/',
+    },
+    {
+      name: 'Scan Aku',
+      href: '/scan',
+    },
+    {
+      name: 'Kalkulator BMI',
+      href: '/bmi',
+    },
   ]
 
   return (
@@ -68,10 +86,10 @@ const Navbar = () => {
                     {navigation.map((item, index) => (
                       <Link
                         key={index}
-                        href='/'
+                        href={item.href}
                         className='w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary focus:text-primary focus:bg-blue-100 dark:focus:bg-gray-800 focus:outline-none'
                       >
-                        {item}
+                        {item.name}
                       </Link>
                     ))}
                     <Link
@@ -93,10 +111,10 @@ const Navbar = () => {
             {navigation.map((menu, index) => (
               <li className='mr-3 nav__item' key={index}>
                 <Link
-                  href='/'
+                  href={menu.href}
                   className='inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-primary focus:text-primary focus:bg-blue-100 focus:outline-none dark:focus:bg-gray-800'
                 >
-                  {menu}
+                  {menu.name}
                 </Link>
               </li>
             ))}

@@ -14,7 +14,8 @@ module.exports = {
         trueGray: colors.neutral,
         primary: '#0343A5',
         secondary: '#41B549',
-        merah: '#FF7676'
+        merah: '#FF7676',
+        primaryaccent: '#719FDC'
       },
       backgroundImage: {
         'gradient-custom':

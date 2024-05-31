@@ -90,7 +90,7 @@ const Home = () => {
                   </div>
                   <div className='flex justify-center text-lg'>
                     <p className='text-primary'>
-                      BMI Anda adalah {result.bmi.toFixed(2)}
+                      BMI Anda adalah {Math.round(result.bmi)}
                     </p>
                   </div>
                 </>

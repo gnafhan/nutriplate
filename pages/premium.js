@@ -1,29 +1,27 @@
+'use client'
 import Head from 'next/head'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/navbar'
 import Image from 'next/image'
 import { useCookies } from 'react-cookie'
 import { collection, getDocs } from 'firebase/firestore'
 import db from '../lib/firebase'
+import { useRouter } from 'next/router'
 
 const Premium = () => {
     const [cookies, setCookie] = useCookies()
     const [token, setToken] = useState('')
     const [error, setError] = useState('')
-    console.log(token)
+    
     const handleSubmit = async ()=>{
         console.log("aaa")
         try {
             const tokenCollection = collection(db, 'tokens');
-            console.log(tokenCollection)
             const tokenSnapshot = await getDocs(tokenCollection);
-            console.log("tokenSnapshot")
-            console.log(tokenSnapshot)
             const tokens = tokenSnapshot.docs.map(doc => doc.data().token);
-            console.log(token)
             if (tokens.includes(token)) {
                 setCookie('token', token, { path: '/' })
-                window.location.href = '/scan'
+                window.location.href = '/' + window.location.search.slice(6,999).split('%')[0]
             } 
             setError('Token tidak valid')
         } catch (error) {

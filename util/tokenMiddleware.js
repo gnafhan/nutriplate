@@ -3,11 +3,12 @@ import db from "../lib/firebase";
 
 export const tokenMiddleware = async (req, res) => {
     const token = req.headers.cookie?.split('=')[1] ?? null;
-    console.log(token)
+    const originalUrl = req.url; // Capture the original URL
+
     if(!token) {
-        res.writeHead(302, {location: '/premium'})
+        res.writeHead(302, { location: `/premium?from=${encodeURIComponent(originalUrl.slice(1,999))}` });
         res.end();
-        return {props: {}}
+        return {props: {}};
     }
     try {
         const tokenCollection = collection(db, 'tokens');
@@ -15,16 +16,16 @@ export const tokenMiddleware = async (req, res) => {
         const tokens = tokenSnapshot.docs.map(doc => doc.data().token);
 
         if (tokens.includes(token)) {
-          return {props: {}}
+            return {props: {}};
         } else {
-            res.writeHead(302, {location: '/premium'})
+            res.writeHead(302, { location: `/premium?from=${encodeURIComponent(originalUrl)}` });
             res.end();
-            return {props: {}}
+            return {props: {}};
         }
-      } catch (error) {
+    } catch (error) {
         console.log(error)
-        res.writeHead(302, {location: '/premium'})
+        res.writeHead(302, { location: `/premium?from=${encodeURIComponent(originalUrl)}` });
         res.end();
-        return {props: {}}
-      }
+        return {props: {}};
+    }
 };

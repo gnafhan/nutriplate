@@ -10,8 +10,10 @@ import { set } from 'react-hook-form'
 import Loading from '../components/Loading'
 import { useRouter } from 'next/router'
 import { tokenMiddleware } from '../util/tokenMiddleware'
+import useTokenMiddleware from '../hooks/useTokenMiddleware'
 
 const Deteksi = () => {
+  useTokenMiddleware()
   const size = useWindowSize()
   const isLandscape = size.height <= size.width
   const ratio = isLandscape

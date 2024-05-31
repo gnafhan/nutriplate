@@ -22,8 +22,10 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { tokenMiddleware } from '../util/tokenMiddleware'
+import useTokenMiddleware from '../hooks/useTokenMiddleware'
 
 const Home = () => {
+  useTokenMiddleware()
   const [data, setData] = useState({})
   const [result, setResult] = useState({})
   const router = useRouter()

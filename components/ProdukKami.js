@@ -18,13 +18,13 @@ const ProdukKami = () => {
             </h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-7'>
               <div>
-                <CardProduk />
+                <CardProduk image={'/img/Diabetes.png'} />
               </div>
               <div>
-                <CardProduk />
+                <CardProduk  image={'/img/Normal.png'} />
               </div>
               <div>
-                <CardProduk />
+                <CardProduk  image={'/img/Obesitas.png'} />
               </div>
             </div>
           </div>
@@ -34,13 +34,13 @@ const ProdukKami = () => {
             </h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-y-7'>
               <div>
-                <CardProduk />
+                <CardProduk image={'/img/Diabetes.png'} />
               </div>
               <div>
-                <CardProduk />
+                <CardProduk  image={'/img/Normal.png'} />
               </div>
               <div>
-                <CardProduk />
+                <CardProduk  image={'/img/Obesitas.png'} />
               </div>
             </div>
           </div>

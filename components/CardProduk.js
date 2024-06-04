@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-const CardProduk = () => {
+const CardProduk = ({image}) => {
   const [isClicked, setIsClicked] = useState(false)
   return (
-    <div className='relative flex justify-center items-center max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'>
+    <div className='relative flex items-center justify-center h-64 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'>
       <button
         onClick={() => setIsClicked(prev => !prev)}
         className='absolute top-3 left-3 p-3 transition-all  bg-primary rounded-lg hover:bg-[#426caf] cursor-pointer active:bg-[#2d466e]'
@@ -22,7 +22,7 @@ const CardProduk = () => {
           />
         </svg>
       </button>
-      <Image src={'/img/piring.png'} width={250} height={250} />
+      <Image className='object-contain' src={image} fill />
     </div>
   )
 }

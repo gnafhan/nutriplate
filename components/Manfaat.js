@@ -10,7 +10,7 @@ const Manfaat = () => {
             <div className='flex justify-end w-full'>
               <div className='relative w-full lg:w-10/12 h-96'>
                 <Image
-                  src={'/img/piring.png'}
+                  src={'/img/Normal.png'}
                   fill
                   className='flex object-contain'
                   alt='Piring'

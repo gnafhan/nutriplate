@@ -11,7 +11,17 @@ const Home = () => {
     <>
       <Head>
         <title>Nutriplate</title>
-        <meta name='description' content='Nutriplate' />
+        <meta name='description' content='Manajemen Diet Diabetes Melitus, Apa Itu? | Diabetes melitus (DM) dapat didefinisikan sebagai penyakit
+                  metabolik kronis yang ditandai dengan peningkatan kadar
+                  glukosa darah (gula darah). Berdasarkan Riset Kesehatan Dasar
+                  (Riskesdas) tahun 2018, di Indonesia terdapat 1.017.290 orang
+                  yang menderita diabetes melitus berdasarkan diagnosis dokter.
+                  Tahukah kamu bahwa faktor gaya hidup, seperti pola makan
+                  menjadi dasar pengelolaan diabetes melitus tipe 2, lho! Bagi
+                  yang telah didiagnosis mengalami diabetes melitus, kadar
+                  insulin dalam darah harus dikontrol. Lalu bagaimana manajemen
+                  diet untuk diabetes melitus agar tidak menyebabkan kondisi
+                  yang tidak diinginkan?' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

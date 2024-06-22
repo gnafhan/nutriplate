@@ -50,7 +50,7 @@ const Home = () => {
             <img
               src='/img/DiabetesBlog.jpg'
               alt='blog'
-              className='mt-10 h-[400px] rounded-md mb-11'
+              className='mt-10 h-[400px] object-cover rounded-md mb-11'
             />
             </div>
             <div className='max-w-[770px] mx-auto'>

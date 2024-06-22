@@ -242,6 +242,6 @@ const Home = () => {
 
 export default Home
 
-export const getServerSideProps = async ({ req, res }) => {
-  return tokenMiddleware(req, res)
-}
+// export const getServerSideProps = async ({ req, res }) => {
+//   return tokenMiddleware(req, res)
+// }

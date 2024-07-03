@@ -14,9 +14,9 @@ const Pembelian = ({ image }) => {
           </div>
           <div>
             <div className='grid grid-cols-1 mt-5 lg:grid-cols-3 gap-y-5'>
-              <CardPembelian image={'/img/brands/lazada.svg'} />
-              <CardPembelian image={'/img/brands/shopee.svg'} />
-              <CardPembelian image={'/img/brands/tokped.svg'} />
+              <CardPembelian link={'#'} image={'/img/brands/lazada.svg'} />
+              <CardPembelian link={'http://shopee.co.id/nutriplateugm'} image={'/img/brands/shopee.svg'} />
+              <CardPembelian link={'#'} image={'/img/brands/tokped.svg'} />
             </div>
           </div>
         </div>

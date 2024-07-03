@@ -29,7 +29,7 @@ const Home = () => {
       <Navbar />
       <Hero2 />
       <Manfaat />
-      <ProdukKami />
+      {/* <ProdukKami /> */}
       <ProgramDiet />
       <Pembelian />
       <Footer />

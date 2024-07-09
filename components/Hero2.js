@@ -63,6 +63,18 @@ const Hero2 = () => {
 
               </div>
               </SwiperSlide>
+              <SwiperSlide>
+              <div className='w-full h-full'>
+              <Image
+                src={'/img/slide/slide5.png'}
+                alt='Banner'
+                className='object-contain w-full rounded-lg'
+                fill={true}
+                draggable={false}
+              />
+
+              </div>
+              </SwiperSlide>
             </Swiper>
             <div className='flex flex-col items-center justify-center gap-2 py-10'>
               <h1 className='font-bold text-7xl text-primary'>

@@ -3,12 +3,18 @@ import React, { useContext } from 'react'
 import dataScan from '../data/dataBe'
 import { DataContext } from '../context/DataContext'
 import { tokenMiddleware } from '../util/tokenMiddleware'
+import {Translator, Translate} from 'react-auto-translate';
 
 const resultData = () => {
   const { data, setData, screenshot, setScreenshot, size } =
   useContext(DataContext)
   return (
     <>
+    <Translator
+     from='en'
+     to='id'
+     googleApiKey={process.env.NEXT_PUBLIC_GOOGLE_API}
+    >
       <div className='flex justify-center w-full '>
         <div className='container max-w-sm my-10 '>
           <div>
@@ -74,6 +80,7 @@ const resultData = () => {
           </div>
         </div>
       </div>
+    </Translator>
     </>
   )
 }

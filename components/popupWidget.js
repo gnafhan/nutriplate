@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useForm, useWatch } from 'react-hook-form'
 import { Disclosure, Transition } from '@headlessui/react'
+import { useRouter } from 'next/router'
 
 const PopupWidget = () => {
+  const router = useRouter()
   const {
     register,
     handleSubmit,
@@ -47,8 +49,8 @@ const PopupWidget = () => {
   }
 
   return (
-    <div>
-      <Disclosure>
+    <div onClick={()=> router.push('https://wa.me/6285717035472') }>
+      <Disclosure > 
         {({ open }) => (
           <>
             <Disclosure.Button className='fixed z-40 flex items-center justify-center transition duration-300 rounded-full shadow-lg bg-primary right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-primary focus:bg-primary ease'>
@@ -109,7 +111,7 @@ const PopupWidget = () => {
               leave='transition duration-200 transform ease'
               leaveTo='opacity-0 translate-y-5'
             >
-              <Disclosure.Panel className=' flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]'>
+              <Disclosure.Panel className=' flex-col hidden opacity-0  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]'>
                 <div className='flex flex-col items-center justify-center h-32 p-5 bg-primary'>
                   <h3 className='text-lg text-white'>How can we help?</h3>
                   <p className='text-white opacity-50'>

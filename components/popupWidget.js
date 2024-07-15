@@ -20,7 +20,6 @@ const PopupWidget = () => {
   const userName = useWatch({ control, name: 'name', defaultValue: 'Someone' })
 
   const onSubmit = async (data, e) => {
-    console.log(data)
     // await fetch('https:///submit', {
     //   method: 'POST',
     //   headers: {

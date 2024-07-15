@@ -21,7 +21,6 @@ export default function KonfirmasiData (params) {
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         setTime(`${hours}:${minutes}`);
-        console.log(dataConfirm)
       }, []);
 
       const handleConfirm = async ()=>{
@@ -33,8 +32,6 @@ export default function KonfirmasiData (params) {
             makanan: dataConfirm,
             image: imageUrl
         }
-        console.log(tanggalRef)
-        console.log(finalData)
         try {
             const save = await  saveMakanan(finalData)
             if(save.message == 'berhasil'){

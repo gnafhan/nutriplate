@@ -16,7 +16,6 @@ export const ResultButton = (data) => {
     const handleAccept = () =>{
         setOpenModal(false)
         setIsAdded(true)
-        console.log(confirmedData)
         handleAdd((prev)=> [...prev, confirmedData])
     }
   return (

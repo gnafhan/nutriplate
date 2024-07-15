@@ -14,7 +14,6 @@ const Premium = () => {
     const [error, setError] = useState('')
     
     const handleSubmit = async ()=>{
-        console.log("aaa")
         try {
             const tokenCollection = collection(db, 'tokens');
             const tokenSnapshot = await getDocs(tokenCollection);

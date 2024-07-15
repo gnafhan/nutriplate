@@ -30,7 +30,6 @@ const Home = () => {
   const [result, setResult] = useState({})
   const router = useRouter()
   const { query } = router
-  console.log(query === null)
   function isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }

@@ -7,7 +7,6 @@ const CheckFetch = () => {
 
   const handleChange = e => {
     setFile(e.target.files[0])
-    console.log(e.target.files[0])
   }
   const imageRef = useRef(null)
   // useEffect(() => {

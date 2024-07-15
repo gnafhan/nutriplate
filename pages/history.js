@@ -65,7 +65,6 @@ export const getServerSideProps = async ({ req, res }) => {
       tanggal: timestampToDate(item.tanggal)
     }))
     const statistik = calculateTotalNutrition(todayData)
-    console.log(statistik)
 
   return {
     props: {

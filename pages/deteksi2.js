@@ -23,7 +23,6 @@ const Deteksi = () => {
     facingMode: 'environment',
     aspectRatio: ratio
   }
-  console.log(size)
   const { data, setData, screenshot, setScreenshot, setSize } =
     useContext(DataContext)
   const [model, setModel] = useState(null)
@@ -92,7 +91,6 @@ const Deteksi = () => {
       body: JSON.stringify(requestData)
     })
     const data = await response.json()
-    console.log(data)
     const predictions = data.responses[0].localizedObjectAnnotations
     setPredictions(predictions)
     setData(predictions)

@@ -4,7 +4,6 @@ import db from "../lib/firebase";
 export const tokenMiddleware = async (req, res) => {
     const token = req.headers.cookie?.split('=')[1] ?? null;
     const originalUrl = req.url; // Capture the original URL
-    console.log(token)
     if(!token) {
         res.writeHead(302, { location: `/premium?from=${encodeURIComponent(originalUrl.slice(1,999))}` });
         res.end();

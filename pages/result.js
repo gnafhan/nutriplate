@@ -83,14 +83,11 @@ const predictionData = [
 const result = () => {
   const { data, setData, screenshot, setScreenshot, size } =
     useContext(DataContext)
-  console.log(screenshot, data)
   const canvasRef = useRef(null)
   const imageRef = useRef(null)
-  console.log(size)
-
+s
   const saveImageToLocalStorage = () => {
     localStorage.setItem('capturedImage', screenshot)
-    console.log('Image saved to localStorage')
   }
 
   useEffect(() => {
@@ -130,7 +127,6 @@ const result = () => {
 
       ctx.strokeStyle = color[index]
       ctx.lineWidth = 4
-      console.log(x, y, width, height, prediction.name)
       ctx.strokeRect(x, y, width, height)
       ctx.fillStyle = color[index]
       const textWidth = ctx.measureText(prediction.name).width

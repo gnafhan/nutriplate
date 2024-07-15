@@ -72,7 +72,6 @@ const Deteksi = () => {
       ctx.fillText(prediction.class, x, y)
     })
 
-    console.log(predictions)
   }
   return (
     <>

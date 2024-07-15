@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import Container from './container'
-// import {  useTranslation, withTranslation } from 'react-google-multi-lang';
 
 
  function Footer () {

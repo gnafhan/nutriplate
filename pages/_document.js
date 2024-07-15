@@ -22,6 +22,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <Analytics />
+          <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
         </body>
       </Html>
     )

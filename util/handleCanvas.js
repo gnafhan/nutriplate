@@ -1,34 +1,4 @@
-import Image from 'next/image'
-import React, { useContext, useEffect, useRef } from 'react'
-import { DataContext } from '../context/DataContext'
-
-import { FoodVisor } from '../data/FoodVisor'
-import dataScan from '../data/dataBe'
-
-const result = () => {
-  const { screenshot, setScreenshot, size } =
-    useContext(DataContext)
-  // console.log(screenshot, data)
-  const data = dataScan;
-  const canvasRef = useRef(null)
-  const imageRef = useRef(null)
-
-
-  const saveImageToLocalStorage = () => {
-    localStorage.setItem('capturedImage', screenshot)
-    console.log('Image saved to localStorage')
-  }
-
-  useEffect(() => {
-    // console.log(data)
-    if (!screenshot) {
-      setScreenshot(localStorage.getItem('capturedImage'))
-    } else {
-      saveImageToLocalStorage()
-    }
-  }, [])
-
-  const handleCanvas = () => {
+const handleCanvas = (canvasRef, imageRef, data) => {
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
     const image = imageRef.current
@@ -45,6 +15,7 @@ const result = () => {
 
     canvas.width = image.width
     canvas.height = image.height
+    window.image = imageRef
 
     data.items.map((predictions, index) => {
       const selectedConfidence = predictions.food[0].food_info.display_name
@@ -79,27 +50,4 @@ const result = () => {
     })
   }
 
-  const imageSrc = `data:image/jpeg;base64,${screenshot}`
-  return (
-    <>
-      <div className='container relative flex justify-center max-w-screen-sm p-0 mx-auto bg-cyan-400 xl:px-0'>
-        <Image
-          ref={imageRef}
-          className='absolute'
-          src={imageSrc}
-          width={600}
-          height={600}
-        />
-        <canvas ref={canvasRef} className='absolute z-10' />
-      </div>
-      <button
-        onClick={handleCanvas}
-        className='absolute p-4 text-white bg-black rounded-full opacity-50 bottom-10'
-      >
-        Show Canvas
-      </button>
-    </>
-  )
-}
-
-export default result
+  export default handleCanvas;

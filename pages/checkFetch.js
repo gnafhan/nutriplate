@@ -21,7 +21,7 @@ const CheckFetch = () => {
         {
           method: 'POST',
           headers: {
-            Authorization: process.env.NEXT_PUBLIC_API_KEY,
+            Authorization: process.env.NEXT_PUBLIC_API_KEY_AI,
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({ image: image })

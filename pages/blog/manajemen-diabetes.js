@@ -5,8 +5,10 @@ import Navbar from './../../components/navbar'
 import Footer from './../../components/footer'
 import Container from './../../components/container'
 import { tokenMiddleware } from './../../util/tokenMiddleware'
+import useTokenMiddleware from '../../hooks/useTokenMiddleware'
 
 const Home = () => {
+  useTokenMiddleware()
   return (
     <>
       <Head>

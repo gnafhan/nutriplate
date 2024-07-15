@@ -4,7 +4,7 @@ import db from "../lib/firebase";
 export const tokenMiddleware = async (req, res) => {
     const token = req.headers.cookie?.split('=')[1] ?? null;
     const originalUrl = req.url; // Capture the original URL
-
+    console.log(token)
     if(!token) {
         res.writeHead(302, { location: `/premium?from=${encodeURIComponent(originalUrl.slice(1,999))}` });
         res.end();
@@ -14,7 +14,6 @@ export const tokenMiddleware = async (req, res) => {
         const tokenCollection = collection(db, 'tokens');
         const tokenSnapshot = await getDocs(tokenCollection);
         const tokens = tokenSnapshot.docs.map(doc => doc.data().token);
-
         if (tokens.includes(token)) {
             return {props: {}};
         } else {

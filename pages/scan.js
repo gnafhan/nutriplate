@@ -11,9 +11,10 @@ import Loading from '../components/Loading'
 import { useRouter } from 'next/router'
 import { tokenMiddleware } from '../util/tokenMiddleware'
 import useTokenMiddleware from '../hooks/useTokenMiddleware'
+import { uploadImage } from '../util/uploadImage'
 
 const Deteksi = () => {
-  useTokenMiddleware()
+  // useTokenMiddleware()
   const size = useWindowSize()
   const isLandscape = size.height <= size.width
   const ratio = isLandscape
@@ -61,13 +62,14 @@ const Deteksi = () => {
       width: webcam.video.videoWidth,
       height: webcam.video.videoHeight
     })
-    const key = process.env.NEXT_PUBLIC_API_KEY
+    const key = process.env.NEXT_PUBLIC_API_KEY_AI
     const url = process.env.NEXT_PUBLIC_API_URL
     const requestData = {
       image: imageSrc
     }
 
     try {
+      const imageUrl = await uploadImage(image)
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -79,11 +81,11 @@ const Deteksi = () => {
       const data = await response.json()
       const predictions = data
       setPredictions(predictions)
-      setData(predictions)
+      setData({image: imageUrl , ...data})
       
       setScreenshot(imageSrc.split(',')[1])
       localStorage.setItem('capturedImage', image)
-      router.push('/resultData')
+      router.push('/cekData')
     } catch (error) {
       console.log(error)
     }

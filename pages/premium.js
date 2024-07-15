@@ -21,11 +21,15 @@ const Premium = () => {
             const tokens = tokenSnapshot.docs.map(doc => doc.data().token);
             if (tokens.includes(token)) {
                 setCookie('token', token, { path: '/' })
-                window.location.href = '/' + window.location.search.slice(6,999).split('%')[0]
-            } 
-            setError('Token tidak valid')
+                if( !window.location.search.slice(6,999).split('%')[0]){
+                  window.location.href = '/home' 
+                } else{
+                  window.location.href = '/home' //+ window.location.search.slice(6,999).split('%')[0]
+                }
+            } else {
+              setError('Token tidak valid')
+            }
         } catch (error) {
-            console.log(error)
             setError('Token tidak valid')
         }
         

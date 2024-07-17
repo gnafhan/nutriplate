@@ -4,11 +4,10 @@ export function CarouselHome() {
   return (
     <div className="h-[28vh]">
       <Carousel slideInterval={3000}>
-        <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-        <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+        <img className="rounded-lg shadow-lg" src="/img/slide/slide1.svg" alt="..." />
+        <img className="rounded-lg shadow-lg" src="/img/slide/slide2.svg" alt="..." />
+        <img className="rounded-lg shadow-lg" src="/img/slide/slide3.svg" alt="..." />
+        <img className="rounded-lg shadow-lg" src="/img/slide/slide4.svg" alt="..." />
       </Carousel>
     </div>
   );

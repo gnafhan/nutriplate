@@ -9,7 +9,6 @@ import Container from './container'
     'Beranda',
     'Info/Kesehatan',
     'Program Diet',
-    'Kontent Anak',
     'Kumpulan Resep'
   ]
   const legal = ['Tentang Kami', 'Hubungi Kami']
@@ -42,11 +41,7 @@ import Container from './container'
             </div>
 
             <div className='max-w-md mt-4 text-gray-500 dark:text-gray-400'>
-              lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            NutriPlate merupakan SmartPlate Berbasis QR Code Untuk Mengatur Porsi Makan Individu Secara Terklasifikasi sebagai solusi dalam menekan prevalensi PTM di indonesia. NutriPlate merupakan konsep alat makan untuk membantu pemorsian makanan individu dengan produk akhir berbentuk piring. Pengembangan produk ini dilakukan dengan penambahan ilustrasi pemorsian dan QR Code pada piring 
             </div>
           </div>
 

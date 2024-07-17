@@ -1,28 +1,29 @@
 import Image from 'next/image'
 import Container from './container'
+import Link from 'next/link'
 
 const ProgramDiet = () => {
   return (
     <>
       <Container>
-        <div className='relative flex items-center justify-center w-full rounded-lg cursor-pointer h-72'>
+        <Link href={'/resep-makanan'}  className='relative flex items-center justify-center w-full rounded-lg cursor-pointer h-72'>
           <Image
             src={'/img/programDiet.png'}
             alt='ProgramDiet'
             fill
             className='object-cover rounded-lg'
           />
-          <div className='absolute'>
+          <div data-aos-duration="1000" data-aos="zoom-in-up" className='absolute'>
             <div className='px-6 py-3 bg-white rounded-full shadow-2xl '>
               <h1 className='text-4xl font-bold text-primary'>
-                Program <span className='text-secondary'> Diet</span>
+                Resep <span className='text-secondary'> Makanan</span>
               </h1>
             </div>
             <p className='font-bold text-white'>
               Klik Untuk Mencari Tahu Lebih Lanjut
             </p>
           </div>
-        </div>
+        </Link>
       </Container>
     </>
   )

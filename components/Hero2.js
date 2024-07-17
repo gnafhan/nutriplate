@@ -76,7 +76,7 @@ const Hero2 = () => {
               </div>
               </SwiperSlide>
             </Swiper>
-            <div className='flex flex-col items-center justify-center gap-2 py-10'>
+            <div data-aos-duration="1000" data-aos="zoom-in-up" className='flex flex-col items-center justify-center gap-2 py-10'>
               <h1 className='font-bold text-7xl text-primary'>
                 Nutri<span className='text-secondary'>Plate</span>
               </h1>

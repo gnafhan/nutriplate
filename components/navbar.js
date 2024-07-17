@@ -2,33 +2,35 @@ import Link from 'next/link'
 import ThemeChanger from './DarkSwitch'
 import Image from 'next/image'
 import { Disclosure } from '@headlessui/react'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
+  const router = useRouter()
   const navigation = [
     {
       name: 'Beranda',
-      href: '/',
+      href: '/'
     },
-    {
-      name: 'Tentang Kami',
-      href: '/about',
-    },
+    // {
+    //   name: 'Tentang Kami',
+    //   href: '/about',
+    // },
     {
       name: 'Info/Kesehatan',
-      href: '/info-kesehatan',
+      href: '/info-kesehatan'
     },
-    {
-      name: 'Program Diet',
-      href: '/',
-    },
+    // {
+    //   name: 'Program Diet',
+    //   href: '/',
+    // },
     {
       name: 'Scan Aku',
-      href: '/scan',
+      href: '/scan'
     },
     {
       name: 'Kalkulator BMI',
-      href: '/bmi',
-    },
+      href: '/bmi'
+    }
   ]
 
   return (
@@ -92,12 +94,14 @@ const Navbar = () => {
                         {item.name}
                       </Link>
                     ))}
-                    <Link
-                      href='/'
-                      className='w-full px-6 py-2 mt-3 text-center text-white bg-blue-600 rounded-md lg:ml-5'
-                    >
-                      Get Started
-                    </Link>
+                    {router.pathname == '/' && (
+                      <Link
+                        href='/'
+                        className='w-full px-6 py-2 mt-3 text-center text-white bg-blue-600 rounded-md lg:ml-5'
+                      >
+                        Login
+                      </Link>
+                    )}
                   </>
                 </Disclosure.Panel>
               </div>
@@ -122,14 +126,23 @@ const Navbar = () => {
         </div>
 
         <div className='hidden mr-3 space-x-4 lg:flex nav__item'>
-          {/* <Link
-            href='/'
+        {router.pathname == '/' ? (
+          <Link
+            href='/premium'
             className='px-6 py-2 text-white bg-blue-600 rounded-md md:ml-5'
           >
-            Get Started
-          </Link> */}
-
-          <ThemeChanger />
+            Login
+          </Link>
+             ): (<>
+             <Link href={'/home'}>
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+             <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+           </svg>
+             </Link>
+             
+             </>)
+           }
+          {/* <ThemeChanger /> */}
         </div>
       </nav>
     </div>

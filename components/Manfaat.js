@@ -8,7 +8,7 @@ const Manfaat = () => {
         <div className='flex flex-col items-center justify-start p-5 rounded-lg md:flex-row gap-x-10 bg-gradient-custom lg:bg-none '>
           <div className='flex w-full lg:w-5/12 lg:justify-end '>
             <div className='flex justify-end w-full'>
-              <div className='relative w-full lg:w-10/12 h-96'>
+              <div data-aos-duration="1000" data-aos="fade-up-right" className='relative w-full lg:w-10/12 h-96'>
                 <Image
                   src={'/img/Normal.png'}
                   fill
@@ -18,7 +18,7 @@ const Manfaat = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col gap-3 lg:w-6/12'>
+          <div data-aos="fade-up-left" data-aos-duration="1000" className='flex flex-col gap-3 lg:w-6/12'>
             <div className='px-1 py-3 bg-white rounded-full dark:bg-black'>
               <h1 className='text-4xl font-bold text-center text-primary'>
                 Manfaat <span className='text-secondary'>NutriPlate</span>

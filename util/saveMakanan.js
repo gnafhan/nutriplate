@@ -1,4 +1,4 @@
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore"; 
+import { collection, addDoc, query, where, getDocs, doc, getDoc } from "firebase/firestore"; 
 import db from "../lib/firebase";
 
 export const saveMakanan = async (dataMakanan) => {
@@ -31,3 +31,19 @@ export const getMakananByToken = async (token) => {
         return { message: "gagal", error: error };
     }
 }
+
+export const getMakananById = async (id) => {
+    try {
+        const docRef = doc(db, 'dataMakan', id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            return { message: "berhasil", data: { id: docSnap.id, ...docSnap.data() } };
+        } else {
+            return { message: "gagal", error: "Document not found" };
+        }
+    } catch (error) {
+        console.error("Error getting document: ", error);
+        return { message: "gagal", error: error };
+    }
+};

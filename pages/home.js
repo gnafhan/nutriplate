@@ -12,7 +12,7 @@ import { CarouselHome } from '../components/CarouselHome'
 import { Feature } from '../components/Feature'
 
 const resultData = () => {
-  //   useTokenMiddleware()
+    useTokenMiddleware()
 
   //   const [data, setData] = useState([])
   //   const [selectedData, setSelectedData] = useState([])
@@ -68,3 +68,7 @@ export default resultData
 // export const getServerSideProps = async ({ req, res }) => {
 //   return tokenMiddleware(req, res)
 // }
+
+export const getServerSideProps = async ({ req, res }) => {
+  return tokenMiddleware(req, res)
+}

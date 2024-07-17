@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router'
 import { BottomNav } from '../components/BottomNav'
 import { getMakananByToken } from '../util/saveMakanan'
 import { calculateTotalNutrition, formatDate, isToday, timestampToDate } from '../util/validation'
 
 export default function History ({ data, todayData }) {
+  const router = useRouter()
   const { totalCalories, totalFats, totalCarbs, totalProteins} = todayData;
   return (
     <div className='flex justify-center w-full '>
@@ -39,7 +41,7 @@ export default function History ({ data, todayData }) {
             </p>
           </div>
           <div className='flex items-end justify-end h-full'>
-            <a href='#' className='text-sm text-gray-500 '>
+            <a href={`/history/${item.id}`} className='text-sm text-gray-500 '>
               Selengkapnya
             </a>
           </div>

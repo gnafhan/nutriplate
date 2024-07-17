@@ -1,49 +1,15 @@
-import { Datepicker, Label, TextInput } from 'flowbite-react'
-import Image from 'next/image'
-import { useContext, useEffect, useRef, useState } from 'react';
-import { ConfirmDataContext } from '../context/ConfirmDataContext';
-import { saveMakanan } from '../util/saveMakanan';
-import { useRouter } from 'next/router'
-import { useCookies } from 'react-cookie';
+import { Datepicker, Label, TextInput } from "flowbite-react";
+import Image from "next/image";
+import { getMakananById } from "../../util/saveMakanan";
+import { calculateTotalNutrition, timestampToDate } from "../../util/validation";
+import { useRouter } from "next/router";
 
-
-export default function KonfirmasiData (params) {
-    const {dataConfirm, setDataConfirm, imageUrl, setImageUrl} = useContext(ConfirmDataContext)
-    const [time, setTime] = useState('');
-    const judulRef = useRef(null)
-    const tanggalRef = useRef(null)
-    const waktuRef = useRef(null)
-    const route = useRouter()
-    const [cookies, setCookie] = useCookies()
-    
-    useEffect(() => {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        setTime(`${hours}:${minutes}`);
-      }, []);
-
-      const handleConfirm = async ()=>{
-        const finalData = {
-            token: cookies.token,
-            judul: judulRef.current.value,
-            tanggal: tanggalRef.current.value || new Date(),
-            waktu: waktuRef.current.value,
-            makanan: dataConfirm,
-            image: imageUrl
-        }
-        try {
-            const save = await  saveMakanan(finalData)
-            if(save.message == 'berhasil'){
-              route.push('/home')
-            }
-        } catch (error) {
-            console.log(error)
-        }
-      }
-
-  return (
-    <>
+export default function DetailHistory({makanan}) {
+    const router = useRouter()
+    const data = JSON.parse(makanan)
+    const {totalCalories, totalFats, totalCarbs, totalProteins} = calculateTotalNutrition([JSON.parse(makanan)])
+    return(
+        <>
       <div className='flex justify-center w-full '>
         <div className='container max-w-sm mb-10 '>
           <div>
@@ -53,27 +19,27 @@ export default function KonfirmasiData (params) {
           </div>
           <div className='w-full h-[25vh] rounded-xl shadow-lg object-cover relative'>
             <Image
-              src={imageUrl}
+              src={data.image}
               fill
               className='object-cover rounded-xl'
             />
           </div>
           <div className='flex flex-col justify-between w-full gap-3 p-2 mt-5 border-2 shadow-md rounded-xl border-primary'>
             <p className='text-sm font-medium'>Estimasi total kalori</p>
-            <div className='w-full text-lg font-medium text-end'>{Math.round(dataConfirm.reduce((prev, current)=>prev + current.calories, 0))} Kkal</div>
+            <div className='w-full text-lg font-medium text-end'>{totalCalories} Kkal</div>
           </div>
           <div className='grid w-full grid-cols-3 gap-2 mt-2'>
             <div className='flex flex-col justify-between w-full gap-3 p-2 border-2 shadow-md rounded-xl border-primary'>
               <p className='text-sm font-medium'>Estimasi total karbohidrat</p>
-              <div className='w-full text-lg font-medium text-end'>{Math.round(dataConfirm.reduce((prev, current)=>prev + current.carbs, 0))} gram</div>
+              <div className='w-full text-lg font-medium text-end'>{totalCarbs} gram</div>
             </div>
             <div className='flex flex-col justify-between w-full gap-3 p-2 border-2 shadow-md rounded-xl border-primary'>
               <p className='text-sm font-medium'>Estimasi total protein</p>
-              <div className='w-full text-lg font-medium text-end'>{Math.round(dataConfirm.reduce((prev, current)=>prev + current.proteins, 0))} gram</div>
+              <div className='w-full text-lg font-medium text-end'>{totalProteins} gram</div>
             </div>
             <div className='flex flex-col justify-between w-full gap-3 p-2 border-2 shadow-md rounded-xl border-primary'>
               <p className='text-sm font-medium'>Estimasi total lemak</p>
-              <div className='w-full text-lg font-medium text-end'>{Math.round(dataConfirm.reduce((prev, current)=>prev + current.fats, 0))} gram</div>
+              <div className='w-full text-lg font-medium text-end'>{totalFats} gram</div>
             </div>
           </div>
           <div>
@@ -83,13 +49,14 @@ export default function KonfirmasiData (params) {
                   <Label htmlFor='makanan' value='Judul/nama makanan' />
                 </div>
                 <TextInput
-                  ref={judulRef}
+                //   ref={judulRef}
                   color={'red'}
                   id='makanan'
                   type='text'
                   placeholder='Makan Siang'
-                  defaultValue={'Makan Siang'}
+                  defaultValue={data.judul}
                   required
+                  disabled
                 />
               </div>
               <div>
@@ -97,7 +64,11 @@ export default function KonfirmasiData (params) {
                   <Label htmlFor='waktu' value='Kapan kamu makan ini' />
                 </div>
                 <div className='flex flex-row justify-between w-full gap-2 '>
-                  <Datepicker onChange={(e)=> tanggalRef.current.value = e.currentTarget.value} ref={tanggalRef} icon={''} className='flex-1' id='waktu' defaultDate={new Date()} />
+                  <Datepicker
+                    disabled
+                    icon={''} className='flex-1' id='waktu' 
+                    defaultDate={new Date(timestampToDate(data.tanggal))} 
+                    />
                   <div className='relative'>
                     <div className='absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none'>
                       <svg
@@ -115,24 +86,40 @@ export default function KonfirmasiData (params) {
                       </svg>
                     </div>
                     <input
-                      ref={waktuRef}
                       type='time'
                       id='time'
                       className='bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-                      defaultValue={time}
-                      onChange={(e)=> {console.log(e.currentTarget.value)}}
+                      defaultValue={data.waktu}
                       required
                     />
                   </div>
                 </div>
               </div>
             </form>
-              <button onClick={handleConfirm} className='w-full py-2 mt-3 text-lg font-semibold text-center text-white rounded-lg bg-primary px3 font-poppins'>Continue</button>
+              <button 
+              onClick={()=> router.back()}
+               className='w-full py-2 mt-3 text-lg font-semibold text-center text-white rounded-lg bg-primary px3 font-poppins'>Kembali</button>
           </div>
         </div>
       </div>
     </>
-  )
-}
+    )
+};
 
+export const getServerSideProps = async (context) => {
+    const { slug } = context.params;
 
+    const response = await getMakananById(slug);
+    
+    if (response.message === "gagal") {
+        return {
+            notFound: true,
+        };
+    }
+
+    return {
+        props: {
+            makanan: JSON.stringify(response.data),
+        },
+    };
+};

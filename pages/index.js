@@ -16,9 +16,35 @@ import Manfaat from '../components/Manfaat'
 import ProdukKami from '../components/ProdukKami'
 import ProgramDiet from '../components/ProgramDiet'
 import Pembelian from '../components/Pembelian'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react'
+import { useCookies } from 'react-cookie'
+import { collection, getDocs } from 'firebase/firestore'
+import db from '../lib/firebase'
+import { useRouter } from 'next/router'
 
 
 const Home = () => {
+  const [cookies, setCookie] = useCookies()
+  const router = useRouter()
+  useEffect(() => {
+    AOS.init();
+
+    async function checkToken(){
+      if (cookies.token) {
+        const tokenCookie = cookies.token
+        const tokenCollection = collection(db, 'tokens');
+        const tokenSnapshot = await getDocs(tokenCollection);
+        const tokens = tokenSnapshot.docs.map(doc => doc.data().token);
+        if (tokens.includes(tokenCookie)) {
+            router.push('/home');
+          }
+      }
+  }
+  checkToken()
+    
+  }, [])
   return (
     <>
       <Head>
@@ -40,3 +66,23 @@ const Home = () => {
 }
 
 export default Home
+
+export const getServerSideProps = async ({ req, res }) => {
+  const cookies = req.cookies
+  async function checkToken(){
+    if (cookies.token) {
+      const tokenCookie = cookies.token
+      const tokenCollection = collection(db, 'tokens');
+      const tokenSnapshot = await getDocs(tokenCollection);
+      const tokens = tokenSnapshot.docs.map(doc => doc.data().token);
+      console.log(tokens)
+      if (tokens.includes(tokenCookie)) {
+        res.writeHead(302, { location: `/home` });
+        res.end();
+        return {props:{}}
+        }
+    }
+    return {props:{}}
+  }
+  return checkToken()
+}

@@ -42,7 +42,7 @@ const resultData = () => {
           <div>
             <div>
                 <div className='flex w-full h-[20vh] relative'>
-                    <Image ref={imageRef} src={'/img/ikan.jpg'} className="object-cover z-[-1] " fill />
+                    <Image ref={imageRef} src={imageUrl} className="object-cover z-[-1] " fill />
                     <canvas ref={canvasRef} className='absolute z-10' />
                 </div>
                 <div className="flex w-full min-h-[75vh] rounded-t-2xl flex-col  bg-white mt-[-10px] ">

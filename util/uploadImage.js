@@ -2,7 +2,7 @@ import { ref, uploadString, getDownloadURL } from "firebase/storage"
 import { storage } from "../lib/firebase"
 
 function generateRandomString(length = 30) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {

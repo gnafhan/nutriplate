@@ -96,7 +96,7 @@ const Navbar = () => {
                     ))}
                     {router.pathname == '/' && (
                       <Link
-                        href='/'
+                        href='/premium'
                         className='w-full px-6 py-2 mt-3 text-center text-white bg-blue-600 rounded-md lg:ml-5'
                       >
                         Login

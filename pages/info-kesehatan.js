@@ -46,22 +46,26 @@ const Home = () => {
             <a href='/blog/manajemen-diabetes' className='relative block h-64 group sm:h-80 lg:h-96'>
               <span className='absolute inset-0 border-2 border-black border-dashed rounded-md'></span>
 
-              <div className='relative flex items-end h-full transition-transform transform bg-white border-2 border-black rounded-md border-bottom-4 border-right-4 group-hover:-translate-x-2 group-hover:-translate-y-2'>
+              <div
+                  className='relative flex items-end h-full transition-transform transform bg-white border-2 border-black rounded-md border-bottom-4 border-right-4 group-hover:-translate-x-2 group-hover:-translate-y-2'>
                 <div className='p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8'>
-                  <img src='/img/DiabetesBlog.jpg' className='hidden object-cover border border-black rounded-md md:block size-1 sm:size-6' />
+                  <img src='/img/DiabetesBlog.jpg'
+                       className='hidden object-cover border border-black rounded-md md:block size-1 sm:size-6'/>
 
                   <h2 className='mt-4 text-xl font-medium sm:text-2xl'>
                     Manajemen Diet Diabetes Melitus, Apa Itu?
                   </h2>
                 </div>
 
-                <div className='absolute p-4 transition-opacity opacity-0 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8'>
+                <div
+                    className='absolute p-4 transition-opacity opacity-0 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8'>
                   <h3 className='mt-4 text-xl font-medium sm:text-2xl'>
                     Manajemen Diet Diabetes Melitus, Apa Itu?
                   </h3>
 
                   <p className='mt-4 text-sm sm:text-base'>
-                  Pada artikel kali ini kita akan membahas mengenai manajemen diet pada diabetes melitus, yuk simak penjelasan berikut ini! 
+                    Pada artikel kali ini kita akan membahas mengenai manajemen diet pada diabetes melitus, yuk simak
+                    penjelasan berikut ini!
                   </p>
 
                   <p className='mt-8 font-bold'>Baca Selengkapnya!</p>
@@ -71,32 +75,65 @@ const Home = () => {
             <a href='/blog/karbohidrat-untuk-atlet' className='relative block h-64 group sm:h-80 lg:h-96'>
               <span className='absolute inset-0 border-2 border-black border-dashed rounded-md'></span>
 
-              <div className='relative flex items-end h-full transition-transform transform bg-white border-2 border-black rounded-md border-bottom-4 border-right-4 group-hover:-translate-x-2 group-hover:-translate-y-2'>
+              <div
+                  className='relative flex items-end h-full transition-transform transform bg-white border-2 border-black rounded-md border-bottom-4 border-right-4 group-hover:-translate-x-2 group-hover:-translate-y-2'>
                 <div className='p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8'>
-                  <img src='/img/atletMakan.jpg' className='hidden object-cover border border-black rounded-md md:block size-1 sm:size-6' />
+                  <img src='/img/atletMakan.jpg'
+                       className='hidden object-cover border border-black rounded-md md:block size-1 sm:size-6'/>
 
                   <h2 className='mt-4 text-xl font-medium sm:text-2xl'>
                     Karbohidrat untuk Performa Atlet
                   </h2>
                 </div>
 
-                <div className='absolute p-4 transition-opacity opacity-0 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8'>
+                <div
+                    className='absolute p-4 transition-opacity opacity-0 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8'>
                   <h3 className='mt-4 text-xl font-medium sm:text-2xl'>
                     Karbohidrat untuk Performa Atlet
                   </h3>
 
                   <p className='mt-4 text-sm sm:text-base'>
-                  Pada artikel kali ini kita akan membahas mengenai kaitannya dengan mikronutrien yang berperan pada atlet
+                    Pada artikel kali ini kita akan membahas mengenai kaitannya dengan mikronutrien yang berperan pada
+                    atlet
                   </p>
 
                   <p className='mt-8 font-bold'>Baca Selengkapnya!</p>
                 </div>
               </div>
             </a>
+            <a href='/blog/gaya-hidup' className='relative block h-64 group sm:h-80 lg:h-96'>
+              <span className='absolute inset-0 border-2 border-black border-dashed rounded-md'></span>
+
+              <div
+                  className='relative flex items-end h-full transition-transform transform bg-white border-2 border-black rounded-md border-bottom-4 border-right-4 group-hover:-translate-x-2 group-hover:-translate-y-2'>
+                <div className='p-4 !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8'>
+                  <img src='/img/run.jpg'
+                       className='hidden object-cover border border-black rounded-md md:block size-1 sm:size-6'/>
+
+                  <h2 className='mt-4 text-xl font-medium sm:text-2xl'>
+                    Mengubah Gaya Hidup dengan Aktivitas Fisik
+                  </h2>
+                </div>
+
+                <div
+                    className='absolute p-4 transition-opacity opacity-0 group-hover:relative group-hover:opacity-100 sm:p-6 lg:p-8'>
+                  <h3 className='mt-4 text-xl font-medium sm:text-2xl'>
+                    Mengubah Gaya Hidup dengan Aktivitas Fisik
+                  </h3>
+
+                  <p className='mt-4 text-sm sm:text-base'>
+                    Pada artikel kali ini kita akan membahas mengenai mengubah gaya hidup dengan aktivitas fisik
+                  </p>
+
+                  <p className='mt-8 font-bold'>Baca Selengkapnya!</p>
+                </div>
+              </div>
+            </a>
+
           </div>
         </Container>
       </section>
-      <Footer />
+      <Footer/>
       {/* <PopupWidget /> */}
     </>
   )
@@ -104,6 +141,6 @@ const Home = () => {
 
 export default Home
 
-export const getServerSideProps = async ({ req, res }) => {
+export const getServerSideProps = async ({req, res}) => {
   return tokenMiddleware(req, res)
 }

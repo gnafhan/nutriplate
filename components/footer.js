@@ -95,22 +95,22 @@ import Container from './container'
           <div className=''>
             <div>Follow us</div>
             <div className='flex mt-5 space-x-5 text-gray-400 dark:text-gray-500'>
-              <a href='https://twitter.com/' target='_blank' rel='noopener'>
+              <a href='https://twitter.com/pkmkugm_nutriplate' target='_blank' rel='noopener'>
                 <span className='sr-only'>Twitter</span>
                 <Twitter />
               </a>
-              <a href='https://facebook.com/' target='_blank' rel='noopener'>
+              <a href='https://facebook.com/pkmkugm_nutriplate' target='_blank' rel='noopener'>
                 <span className='sr-only'>Facebook</span>
                 <Facebook />
               </a>
-              <a href='https://instagram.com/' target='_blank' rel='noopener'>
+              <a href='https://www.instagram.com/pkmkugm_nutriplate/' target='_blank' rel='noopener'>
                 <span className='sr-only'>Instagram</span>
                 <Instagram />
               </a>
-              <a href='https://linkedin.com/' target='_blank' rel='noopener'>
+              {/* <a href='https://linkedin.com/' target='_blank' rel='noopener'>
                 <span className='sr-only'>Linkedin</span>
                 <Linkedin />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

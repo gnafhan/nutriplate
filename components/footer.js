@@ -26,7 +26,7 @@ import Container from './container'
   const legal = [
     {
       name: 'Tentang Kami',
-      link: '/about'
+      link: 'https://www.instagram.com/pkmkugm_nutriplate/'
     }, 
     {
       name: 'Hubungi Kami',

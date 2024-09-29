@@ -6,12 +6,33 @@ import Container from './container'
 
  function Footer () {
   const navigation = [
-    'Beranda',
-    'Info/Kesehatan',
-    'Program Diet',
-    'Kumpulan Resep'
+    {
+      name: 'Beranda',
+      link: '/'
+    }, 
+    {
+      name: 'Info/Kesehatan',
+      link: '/info-kesehatan'
+    },
+    {
+      name: 'Program Diet',
+      link: '/info-kesehatan'
+    },
+    {
+      name: 'Kumpulan Resep',
+      link: '/resep-makanan'
+    }, 
   ]
-  const legal = ['Tentang Kami', 'Hubungi Kami']
+  const legal = [
+    {
+      name: 'Tentang Kami',
+      link: '/about'
+    }, 
+    {
+      name: 'Hubungi Kami',
+      link: 'https://wa.me/6285717035472'
+    },
+    ]
 
 
 
@@ -50,10 +71,10 @@ import Container from './container'
               {navigation.map((item, index) => (
                 <Link
                   key={index}
-                  href='/'
+                  href={item.link}
                   className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary focus:text-primary focus:bg-pritext-primary focus:outline-none dark:focus:bg-trueGray-700'
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>
@@ -63,10 +84,10 @@ import Container from './container'
               {legal.map((item, index) => (
                 <Link
                   key={index}
-                  href='/'
+                  href={item.link}
                   className='w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary focus:text-primary focus:bg-pritext-primary focus:outline-none dark:focus:bg-trueGray-700'
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </div>

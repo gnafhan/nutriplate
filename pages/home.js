@@ -28,8 +28,8 @@ const resultData = () => {
 
   return (
     <>
-      <div className='flex justify-center w-full '>
-        <div className='container max-w-sm mb-10 font-poppins '>
+      <div className='flex justify-center w-full  '>
+        <div className='container max-w-sm mx-5 mb-10 font-poppins '>
           <div>
             <h1 className='w-full my-5 text-lg font-semibold'>
               Halo, Selamat Datang 👋{' '}

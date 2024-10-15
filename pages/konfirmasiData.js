@@ -44,7 +44,7 @@ export default function KonfirmasiData (params) {
 
   return (
     <>
-      <div className='flex justify-center w-full '>
+      <div className='flex justify-center w-full px-5 '>
         <div className='container max-w-sm mb-10 '>
           <div>
             <h1 className='w-full my-5 text-lg font-semibold'>

@@ -10,7 +10,7 @@ export default function DetailHistory({makanan}) {
     const {totalCalories, totalFats, totalCarbs, totalProteins} = calculateTotalNutrition([JSON.parse(makanan)])
     return(
         <>
-      <div className='flex justify-center w-full '>
+      <div className='flex justify-center w-full px-5 '>
         <div className='container max-w-sm mb-10 '>
           <div>
             <h1 className='w-full my-5 text-lg font-semibold'>

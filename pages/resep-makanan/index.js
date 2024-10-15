@@ -40,18 +40,18 @@ const Home = () => {
       </Head>
 
       <Navbar />
-      <section className='relative flex w-full min-h-screen'>
+      <section className='relative flex w-full min-h-screen mx-5'>
         <Image
           src={'/img/shape_pinggir.svg'}
           width={427}
           height={364}
-          className='absolute bottom-0 right-0 z-[-1]'
+          className='absolute bottom-0 right-0 z-[-1] hidden lg:block'
         />
         <Image
           src={'/img/shape_pinggir.svg'}
           width={427}
           height={364}
-          className='absolute bottom-0 left-0 scale-x-[-1] z-[-1]'
+          className='absolute bottom-0 left-0 scale-x-[-1] z-[-1] hidden lg:block'
         />
         <div className='flex justify-center w-full h-full'>
           <div className='flex justify-center w-full max-w-screen-lg gap-y-8 '>

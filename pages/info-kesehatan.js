@@ -35,7 +35,7 @@ const Home = () => {
           src={'/img/ombak_kiri.svg'}
           width={1920}
           height={885}
-          className='absolute bottom-0 left-0'
+          className='absolute bottom-0 left-0 hidden lg:block'
         />
         <Container className='z-10'>
           <h1 className='mt-6 mb-4 text-3xl font-semibold text-black'>

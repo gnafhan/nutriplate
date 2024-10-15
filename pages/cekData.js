@@ -49,14 +49,14 @@ const resultData = () => {
                     <div className='flex justify-center w-full text-center my-7'>
                         <p className='text-lg font-semibold font-poppins'>Pilih Makananmu</p>
                     </div>
-                    <div className="flex flex-row flex-wrap w-full h-full gap-x-2 gap-y-4">
+                    <div className="flex flex-row flex-wrap w-full h-full gap-x-2 gap-y-4 px-5">
                         {dataIter.length > 0 && dataIter.map((item, index) => 
                             (<>
                             <ResultButton handleAdd={setSelectedData} key={index} data={item}/>
                         </>))}
                     </div>
                 </div>
-                <button onClick={handleSubmit} className='w-full py-2 text-lg font-semibold text-center text-white rounded-lg bg-primary px3 font-poppins'>Continue</button>
+                <button onClick={handleSubmit} className='w-full py-2 mt-5 text-lg font-semibold text-center text-white rounded-lg bg-primary px3 font-poppins'>Continue</button>
             </div>
           </div>
         </div>

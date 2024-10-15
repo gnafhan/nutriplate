@@ -103,7 +103,7 @@ const Deteksi = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className='container flex justify-center max-w-screen-xl p-0 mx-auto bg-cyan-400 xl:px-0'>
+        <div className='container flex justify-center max-w-screen-xl p-0 mx-auto xl:px-0'>
           <div className='w-full max-w-screen-sm min-h-[100vh] bg-slate-400 relative'>
             <div>
             </div>
@@ -170,6 +170,7 @@ const Deteksi = () => {
               </button>
 
               <button
+                  disabled={loading}
                 onClick={captureImage}
                 className='p-4 text-[#367CE8] bg-white rounded-full  '
               >

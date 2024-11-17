@@ -1,0 +1,784 @@
+const recipeData = {
+    "opor-telur": {
+        title: "Opor Telur",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Telur ayam rebus 55 gram (1 butir)",
+            "Serai geprek 5 gram (1 batang)",
+            "Daun salam 2 gram (1 lembar)",
+            "Santan 40 gram (⅓ gelas)",
+            "Gula pasir 2 gram (½ sdt)",
+            "Garam 2 gram (½ sdt) atau secukupnya",
+            "Air 75 mL (¾ gelas)",
+            "Minyak goreng 7 gram (½ sdm)",
+            {
+                title: "Bumbu halus",
+                items: [
+                    "Bawang merah 1 siung",
+                    "Bawang putih 1 siung",
+                    "Kemiri 1 butir",
+                    "Kunyit ½ ruas",
+                    "Ketumbar ½ sdt"
+                ]
+            }
+        ],
+        steps: [
+            "Panaskan minyak, masukkan bumbu halus daun salam, serai. Tumis hingga harum.",
+            "Tambahkan santan, air, telur rebus, merica, garam, dan gula.",
+            "Aduk hingga merata dan koreksi rasa"
+        ]
+    },
+    "orek-tempe": {
+        title: "Orek Tempe dan Kacang Panjang",
+        cookTime: "25 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Tempe 50 gram (2 potong sedang)",
+            "Kacang panjang 100 gram",
+            "Bawang putih 6 gram (1 siung)",
+            "Bawang merah 6 gram (1 siung)",
+            "Cabai hijau 10 gram (2 buah)",
+            "Daun salam 2 gram (1 lembar)",
+            "Lengkuas 2 gram (½ ruas)",
+            "Gula jawa 10 gram (1 sdm)",
+            "Garam 2 gram (½ sdt) atau secukupnya",
+            "Kecap manis 14 gram (1 sdm)",
+            "Air 50 mL",
+            "Minyak goreng 7 gram (½ sdm)"
+        ],
+        steps: [
+            "Cuci bersih dan potong kacang panjang. Potong juga tempe menjadi bentuk dadu.",
+            "Iris tipis bawang merah, bawang putih, dan cabai hijau.",
+            "Panaskan minyak lalu tumis bawang putih, lengkuas, dan daun salam hingga harum.",
+            "Masukkan kacang panjang, garam, gula jawa, kecap, dan air.",
+            "Setelah kacang panjang agak empuk, masukkan tempe.",
+            "Tambahkan kecap manis dan tunggu hingga meresap.",
+            "Setelah air menyusut, orek tempe kacang panjang siap disajikan."
+        ]
+    },
+    "ikan-goreng": {
+        title: "Ikan Goreng",
+        cookTime: "40 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Ikan 40 gram (1 potong sedang)",
+            "Jeruk lemon ½ buah",
+            "Minyak goreng secukupnya",
+            {
+                title: "Bumbu marinasi",
+                items: [
+                    "Bawang putih 6 gram (1 siung)",
+                    "Bawang merah 6 gram (1 siung)",
+                    "Ketumbar 2 gram (½ sdt)",
+                    "Kunyit bubuk 2 gram (½ sdt)",
+                    "Garam 2 gram (½ sdt) atau secukupnya"
+                ]
+            }
+        ],
+        steps: [
+            "Cuci bersih ikan, lalu beri jeruk lemon untuk mengurangi bau amis.",
+            "Baluri ikan dengan bumbu marinasi hingga merata dan diamkan selama 30 menit hingga bumbu meresap.",
+            "Panaskan minyak goreng lalu masukkan ikan yang telah dimarinasi.",
+            "Goreng hingga kering kecoklatan, kemudian angkat dan tiriskan."
+        ]
+    },
+    "tahu-asam-manis": {
+        title: "Tahu Asam Manis",
+        cookTime: "20 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Tahu 55 gram",
+            "Bawang putih 6 gram (1 siung), haluskan",
+            "Cabai merah keriting 10 gram (2 buah), ulek kasar",
+            "Tomat 7 gram (½ buah), cincang halus",
+            "Saus tomat 14 gram (1 sdm)",
+            "Garam 2 gram (½ sdt) atau secukupnya",
+            "Gula 2 gram (½ sdt) atau secukupnya",
+            "Merica 2 gram (1/4 sdt)",
+            "Minyak 7 gram (½ sdm)",
+            "Air 20 mL (⅕ gelas)"
+        ],
+        steps: [
+            "Potong tahu menjadi bentuk dadu dan goreng hingga kering",
+            "Tumis bawang putih dan cabai merah keriting yang telah dihaluskan hingga wangi",
+            "Masukkan irisan tomat dan tumis hingga setengah layu",
+            "Tambahkan air, saus tomat, gula, garam, dan merica, lalu aduk rata.",
+            "Masukkan tahu yang telah digoreng, aduk hingga rata dan meresap. Angkat dan sajikan."
+        ]
+    },
+    "tumis-daun-singkong": {
+        title: "Tumis Daun Singkong",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Daun singkong 100 gram",
+            "Cabai merah keriting 10 gram (2 buah)",
+            "Bawang putih 6 gram (1 siung)",
+            "Bawang merah 6 gram (1 siung)",
+            "Lada 2 gram (¼ sdt)",
+            "Garam 2 gram (½ sdt) atau secukupnya",
+            "Gula 2 gram (½ sdt) atau secukupnya",
+            "Minyak 7 gram (½ sdt)",
+            "Air 500 mL (5 gelas)"
+        ],
+        steps: [
+            "Cuci bersih daun singkong dan rebus hingga empuk lalu ditiriskan/diperas.",
+            "Iris tipis bawang merah dan bawang putih, serta iris serong cabai merah keriting",
+            "Tumis irisan bawang merah, bawang putih, dan cabai merah keriting dengan sedikit minyak hingga harum.",
+            "Masukkan daun singkong yang telah direbus dan tambahkan garam, gula, dan lada. Aduk rata hingga matang."
+        ]
+    },
+    "sop-sayur": {
+        title: "Sop Sayur dan Bakso",
+        cookTime: "30 menit",
+        servings: "1-3 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Wortel 50 gram",
+            "Kentang 20 gram",
+            "Kol 50 gram",
+            "Bakso 170 gram (10 biji sedang)",
+            "Daun bawang 10 gram (1 batang sedang)",
+            "Daun seledri 5 gram (½ batang sedang)",
+            "Garam 2 gram (½ sdt) atau secukupnya",
+            "Gula 2 gram (½ sdt) atau secukupnya",
+            "Merica bubuk 2 gram (¼ sdt)",
+            "Minyak 7 gram (½ sdm)",
+            "Air 500 mL (5 gelas)",
+            {
+                title: "Bumbu halus",
+                items: [
+                    "Bawang putih 6 gram (1 siung)",
+                    "Bawang merah 6 gram (1 siung)"
+                ]
+            }
+        ],
+        steps: [
+            "Cuci bersih dan potong-potong sayuran sesuai selera.",
+            "Tumis bumbu halus dengan sedikit minyak hingga harum.",
+            "Didihkan air dan masukkan tumisan bumbu halus, merica bubuk, garam, dan gula.",
+            "Tambahkan bakso, kentang, dan wortel.",
+            "Setelah kentang dan wortel sedikit empuk, masukkan kol dan daun bawang serta daun seledri.",
+            "Tunggu hingga matang dan siap disajikan."
+        ]
+    },
+    "tempe-goreng": {
+        title: "Tempe Goreng",
+        cookTime: "15 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Tempe 50 gram (2 potong sedang)",
+            "Minyak goreng secukupnya",
+            {
+                title: "Bumbu halus",
+                items: [
+                    "Bawang putih 6 gram (1 siung)",
+                    "Garam 2 gram (½ sdt)",
+                    "Ketumbar bubuk 2 gram (½ sdt)",
+                    "Lada bubuk 1 gram (¼ sdt)"
+                ]
+            }
+        ],
+        steps: [
+            "Potong-potong tempe lalu masukkan ke dalam bumbu halus yang telah ditambahkan sedikit air, lalu marinasi selama 10 menit.",
+            "Panaskan minyak, lalu goreng tempe hingga kecoklatan",
+            "Angkat dan tiriskan."
+        ]
+    },
+    "sop-bayam": {
+        title: "Sop Bayam",
+        cookTime: "20 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Bayam 2 ikat",
+            "Wortel 2 buah",
+            {
+                title: "Bumbu iris",
+                items: [
+                    "Bawang merah 3 siung",
+                    "Bawang putih 1 siung",
+                    "Tomat kecil 1 buah",
+                    "Garam secukupnya",
+                    "Gula secukupnya",
+                    "Penyedap rasa secukupnya"
+                ]
+            }
+        ],
+        steps: [
+            "Didihkan air d panci kecil, tunggu sampai mendidih",
+            "Masukan bahan yg d iris",
+            "Masukan wortel, diamkan sampai setengah empuk",
+            "Bumbui garam, royco dan gula",
+            "Masukan bayam",
+            "Test rasa",
+            "Angkat dan sajikan"
+        ]
+    },
+
+    "rendang": {
+        title: "Rendang",
+        cookTime: "4-5 jam",
+        servings: "1-10 porsi",
+        difficulty: "Sulit",
+        ingredients: [
+            "Daging sapi 1 kg",
+            "Santan kental dari 3 butir kelapa 1 liter",
+            "Kelapa parut sangrai 550 gram",
+            "Daun salam 5 lembar",
+            "Daun kunyit 1 lembar",
+            "Daun jeruk 10 lembar",
+            "Serai 5 batang",
+            "Kayu manis ½ batang",
+            "Cengkeh 3 butir",
+            "Garam 2 sdt",
+            "Kembang lawang 1 buah",
+            {
+                title: "Bumbu halus",
+                items: [
+                    "Bawang putih 65 gram",
+                    "Bawang merah 125 gram",
+                    "Kunyit 15 gram",
+                    "Jahe 35 gram",
+                    "Lengkuas 75 gram",
+                    "Kemiri 35 gram",
+                    "Lada bubuk ½ sdt",
+                    "Ketumbar 1 sdt",
+                    "Kapulaga 1 buah",
+                    "Pala ¼ buah"
+                ]
+            }
+        ],
+        steps: [
+            "Pertama-tama, tumis bumbu halus dan kelapa parut sangrai. Aduk rata.",
+            "Kemudian, masukkan daun salam, daun jeruk, daun kunyit, dan serai. Masak hingga wangi.",
+            "Setelah itu, masukkan daging. Aduk rata.",
+            "Tuang santan. Aduk rata.",
+            "Masak rendang dengan api kecil hingga rendang mengering. Rendang daging sapi siap kamu sajikan untuk acara spesial."
+        ]
+    },
+
+    "capcay-sayur": {
+        title: "Capcay Sayur",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Brokoli 4 kuntum",
+            "Kembang kol 5 kuntum",
+            "Putren/jagung muda ukuran besar 3 buah",
+            "Wortel 1 buah",
+            "Jamur kuping 4 lembar",
+            "Caisim manis 15 batang",
+            "Daun bawang 1 batang",
+            "Bakso sapi 4 butir",
+            {
+                title: "Bumbu",
+                items: [
+                    "Bawang putih cincang halus 4 siung",
+                    "Saos tiram 2 sdm",
+                    "Kecap ikan 2 sdm",
+                    "Kecap inggris 1 sdm",
+                    "Garam ½ sdt",
+                    "Micin jamur 1 sdt",
+                    "Gula 1 sdt",
+                    "Lada ¼ sdt",
+                    "Minyak wijen ½ sdt"
+                ]
+            }
+        ],
+        steps: [
+            "Potong semua sayur, dan bakso",
+            "Masukan saos tiram, kecap ikan, kecap inggris, garam, micin jamur, gula, lada, dan minyak wijen dalam satu wadah",
+            "Tumis udang terlebih dahulu, sampai udang berubah warna, sebentar saja. Angkat, sisihkan.",
+            "Tumis bawang putih pada minyak yang sama sampai harum. Masukan wortel dan putren. Tambahkan air, masak sampai wortel dan putren setengah empuk.",
+            "Masukan bakso, jamur kuping, brokoli, kembang kol, dan caisim. Aduk sampai caisim mulai layu, lalu masukan 4 sdm bumbu yang sudah kita campur tadi. Icip rasa. Jika kurang asin bisa tambahkan lagi.",
+            "Aduk, kuah akan mulai mengental. Terakhir masukan daun bawang."
+        ]
+    },
+
+    "mie-goreng-sayur-udang": {
+        title: "Mie Goreng Sayur Udang",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Mie telur 1 bungkus",
+            "Kol sesuai selera",
+            "Wortel sesuai selera",
+            "Daun seledri secukupnya",
+            "Udang ¼ kg",
+            "Ayam dada ¼ kg",
+            "Minyak goreng untuk menumis",
+            "Air ½ gelas",
+            {
+                title: "Bumbu",
+                items: [
+                    "Bawang merah 4 butir",
+                    "Bawang putih 2 butir",
+                    "Cabe keriting merah 5 buah",
+                    "Cabe rawit 2 buah",
+                    "Merica secukupnya",
+                    "Garam secukupnya",
+                    "Kecap manis secukupnya"
+                ]
+            }
+        ],
+        steps: [
+            "Haluskan bumbu-bumbu",
+            "Potong-potong sayuran",
+            "Rebus mie sebentar kira-kira sampai setengah matang dalam air mendidih kemudian angkat dan tiriskan",
+            "Panaskan minyak, tumis bumbu halus sampai harum",
+            "Masukkan udang dan ayam",
+            "Setelah udang berubah warna dan ayam menunjukkan matang masukkan sayuran, tumis sebentar",
+            "Tambahkan setengah gelas air",
+            "Masukkan mie yang telah direbus, masak sambil diaduk-aduk hingga air meresap dan habis",
+            "Taburi irisan seledri, aduk sebentar kemudian matikan api",
+            "Mie goreng udang siap disajikan"
+        ]
+    },
+
+    "ayam-goreng-bumbu-kari": {
+        title: "Ayam Goreng Bumbu Kari",
+        cookTime: "45 menit",
+        servings: "1 porsi",
+        difficulty: "Sedang",
+        ingredients: [
+            "Ayam broiler 800 gr, potong 14",
+            "Telur 1 butir",
+            "Roux kari 70 gr atau 2 sdm bubuk kari + 1 sdt garam",
+            "Bawang putih 5 siung",
+            "Tapioka 100 gr",
+            "Cuka 1 sdm",
+            "Kaldu ayam bubuk 1 sdt",
+            "Merica ¼ sdt",
+            {
+                title: "Bumbu pelengkap",
+                items: [
+                    "Bawang merah 8 siung",
+                    "Bawang putih 5 siung",
+                    "Cabai keriting merah 5 buah",
+                    "Cabai keriting 5 buah",
+                    "Cabai rawit merah 6 buah",
+                    "Kemangi 20 gr",
+                    "Daun bawang 1 batang"
+                ]
+            }
+        ],
+        steps: [
+            "Marinasi ayam dengan bawang putih halus, parutan roux kari, kaldu ayam bubuk, merica, cuka, dan telur, aduk rata kemudian masukkan tepung tapioka, aduk rata. Diamkan selama 1 jam",
+            "Geprek bawang merah, bawang putih lalu belah dua cabai rawit, potong cabai keriting hijau, cabai keriting merah dan daun bawang",
+            "Panaskan minyak, goreng ayam di api besar hingga struktur luar ayam terbentuk lalu kecilkan api, goreng hingga matang, tiriskan",
+            "Goreng bawang merah dan bawang putih, aduk lalu masukkan cabai rawit, cabai keriting merah, cabai keriting hijau, daun bawang, dan daun kemangi, tiriskan",
+            "Ayam goreng kari siap disajikan"
+        ]
+    },
+
+    "sop-sayur-jamur": {
+        title: "Sop Sayur Jamur",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Jamur kuping 100 gr",
+            "Kubis ¼ buah",
+            "Wortel 1 buah",
+            "Daun bawang 1 batang",
+            "Seledri 2 batang",
+            "Tomat 1 buah",
+            "Air 1200 ml",
+            {
+                title: "Bumbu",
+                items: [
+                    "Bawang bombay ½ buah",
+                    "Bawang putih 3 buah",
+                    "Lada bubuk ½ sdt",
+                    "Pala bubuk ¼ sdt",
+                    "Garam secukupnya",
+                    "Gula pasir secukupnya",
+                    "Kaldu jamur ¼ sdt (optional)"
+                ]
+            }
+        ],
+        steps: [
+            "Cuci bersih semua bahan.",
+            "Rebus ayam kurang lebih 3 menit untuk menghilangkan kotoran. Kemudian buang air rebusan pertama. Rebus ayam kembali dengan air yang baru. Sambil menunggu rebus ayam, potong-potong jamur kuping, daun bawang, seledri, kubis.",
+            "Lalu potong-potong wortel. & tomat. Sisihkan",
+            "Masukkan wortel ke dalam air rebusan ayam. Kemudian iris-iris bawang bombay & bawang putih.",
+            "Tumis bawang bombay & bawang putih sampai harum. Setelah harum masukkan kedalam air rebusan ayam.",
+            "Lalu masukkan jamur kuping, kubis, daun bawang, seledri, & tomat. Tambahkan garam, gula, aduk rata. Koreksi rasa. Masak hingga matang."
+        ]
+    },
+    "sayur-bayam-jagung-wortel": {
+        title: "Sayur Bayam Jagung Wortel",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Bayam 100 gram",
+            "Jagung 40 gram",
+            "Wortel 40 gram",
+            "Tomat 15 gram",
+            "Seledri 5 gram",
+            {
+                title: "Bumbu",
+                items: [
+                    "Bawang merah 6 gram",
+                    "Bawang putih 6 gram",
+                    "Kencur 3 gram",
+                    "Garam 2 gram (1/2 sdt)",
+                    "Daun salam 2 gram (1 lembar)"
+                ]
+            }
+        ],
+        steps: [
+            "Didihkan air kemudian, masukkan bawang merah, bawang putih, kencur dan daun salam.",
+            "Masukkan wortel dan jagung. Masak hingga matang dan empuk.",
+            "Masukkan bayam, masak selama kurang lebih 3 menit.",
+            "Tambahkan garam dan aduk rata"
+        ]
+    },
+
+    "ayam-tempe-goreng": {
+        title: "Ayam & Tempe Goreng",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Ayam dengan kulit 40 gram",
+            "Tempe 25 gram",
+            "Minyak 5 gram",
+            "Garam 4 gram (1 sdt)",
+            "Lada bubuk 2 gram"
+        ],
+        steps: [
+            "Cuci bersih ayam dan potog sesuai selera",
+            "Marinasi ayam dengan garam dan lada bubuk",
+            "Rendam tempe yang sudah dipotong ke dalam larutan garam dan lada",
+            "Panaskan minyak dan goreng ayam dan tempe hingga matang kecoklatan"
+        ]
+    },
+
+    "oseng-daun-pepaya-tauge-tahu-putih": {
+        title: "Oseng Daun Pepaya dan Tauge Tahu Putih",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Daun pepaya 100 gram",
+            "Tauge kacang kedelai 100 gram",
+            "Tahu putih 55 gram",
+            "Minyak 2,5 gram",
+            {
+                title: "Bumbu",
+                items: [
+                    "Cabai merah 15 gram (3 buah)",
+                    "Bawang merah 12 gram (2 siung)",
+                    "Bawang putih 12 gram (2 siung)",
+                    "Gula 2 gram (1/2 sdt)",
+                    "Garam 2 gram (1/2 sdt)"
+                ]
+            }
+        ],
+        steps: [
+            "Rebus daun pepaya hingga empuk dan rasa pahitnya berkurang.",
+            "Potong cincang bawang putih, bawang merah, cabai, lalu tumis dengan sedikit minyak",
+            "Masukkan daun pepaya, tauge, dan potonga tahu putih",
+            "Tambahkan sedikit air, lalu tambahkan garam dan gula.",
+            "Tunggu hingga air menyusut, lalu angkat."
+        ]
+    },
+
+    "mango-sticky-rice": {
+        title: "Mango Sticky Rice",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Nasi ketan putih 85 gram",
+            "Santan 40 gram",
+            "Mangga 90 gram",
+            "Garam 2 gram (1/2 sdt)",
+            "Gula 2 gram (1/2 sdt)",
+            "Daun pandan 5 gram",
+            "Tepung maizena 15 gram"
+        ],
+        steps: [
+            "Kukus beras ketan sekitar 30 menit",
+            "Saus santan : didihkan santan, tambahkan daun pandan, gula dan garam, masukkan tepung maizena yang telah dilarutkan dengan sedikit air, aduk rata.",
+            "Kupas dan potong mangga.",
+            "Letakkan mangga dan nasi ketan putih ke dalam piring lalu siram dengan saus santan"
+        ]
+    },
+    "soto-daging": {
+        title: "Soto Daging",
+        cookTime: "45 menit",
+        servings: "1 porsi",
+        difficulty: "Sedang",
+        ingredients: [
+            "Daging sapi 17,5 gram",
+            "Telur bebek asin 50 gram",
+            "Kol 120 gram",
+            "Tauge kacang hijau 80 gram",
+            "Daun bawang 15 gram",
+            "Seledri 15 gram",
+            "Tomat 20 gram",
+            "Garam 2 gram (1/2 sdt)",
+            "Gula 2 gram (1/2 sdt)",
+            {
+                title: "Bumbu halus",
+                items: [
+                    "Bawang merah 10 gram",
+                    "Bawang putih 10 gram",
+                    "Ketumbar 3 gram",
+                    "Lada 3 gram",
+                    "Jahe 3 gram",
+                    "Kunyit 3 gram"
+                ]
+            },
+            {
+                title: "Bumbu lainnya",
+                items: [
+                    "Sereh 5 gram",
+                    "Daun salam 2 gram",
+                    "Lengkuas 3 gram",
+                    "Kapulaga 2 gram",
+                    "Pala 2 gram"
+                ]
+            },
+            "Minyak kelapa sawit 5 gram"
+        ],
+        steps: [
+            "Haluskan garam, gula, bawang merah, bawang putih, ketumbar, lada,  kunyit, pala, dan kapulaga. Geprek jahe, lengkuas, dan sereh.",
+            "Tumis bumbu halus dengan sedikit minyak dan dan tambahkan daun salam.",
+            "Rebus air hingga mendidih lalu masukkan potongan daging sapi dan bumbu halus.",
+            "Masukkan potongan daun seledri, daun bawang",
+            "Iris tipis kol/kubis",
+            "Siapkan piring saji, masukkan irisan kol, tauge, daun bawang, seledri, siram dengan kuah soto dan daging.",
+            "Tambahkan telur bebek asin"
+        ]
+    },
+
+    "ayam-ungkep-goreng": {
+        title: "Ayam Ungkep Goreng Tanpa Kulit",
+        cookTime: "45 menit",
+        servings: "1 porsi",
+        difficulty: "Sedang",
+        ingredients: [
+            "Ayam 80 gram",
+            "Minyak 5 mL",
+            "Gula 2 gram (1/2 sdt) atau secukupnya",
+            "Garam 2 gram (1/2 sdt) atau secukupnya",
+            {
+                title: "Bumbu halus",
+                items: [
+                    "Kunyit 3 gram (1/2 ruas)",
+                    "Bawang putih 6 gram (1 siung)",
+                    "Lengkuas 3 gram (1/2 ruas)",
+                    "Kemiri 2 gram (1/2 butir)"
+                ]
+            }
+        ],
+        steps: [
+            "Haluskan bawang putih, lengkuas, kemiri, garam, dan gula.",
+            "Masukkan ayam dan bumbu halus ke dalam panci, tambahkan sedikit air.",
+            "Didihkan dengan api kecil hingga air menyusut dan bumbu meresap",
+            "Angkat ayam yang sudah matang.",
+            "Goreng ayam dengan minyak hingga matang"
+        ]
+    },
+    "tumis-buncis-tempe": {
+        title: "Tumis Buncis Tempe",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Buncis 100 gram",
+            "Tempe 25 gram",
+            "Bawang merah 6 gram",
+            "Bawang putih 6 gram",
+            "Daun salam 2 gram",
+            "Gula merah 14 gram",
+            "Kecap manis 10 gram",
+            "Saus tiram 5 gram",
+            "Kaldu jamur 5 gram",
+            "Jeruk nipis 30 gram",
+            "Air 50 mL",
+            "Minyak kelapa sawit 2,5 gram"
+        ],
+        steps: [
+            "Goreng dulu tempe yang sudah dipotong sampai kering. Sisihkan.",
+            "Tumis bawang merah dan bawang putih sampai harum. Tambahkan daun salam. Kemudian masukkan gula merah. Aduk rata",
+            "Masukkan buncis dan tambahkan sedikit air agar buncis empuk",
+            "Masukkan tempe yang sudah digoreng. Masukkan kecap manis, saus tiram, dan kaldu jamur. Aduk rata",
+            "Koreksi rasa. Tambahkan jeruk nipis. Aduk sebentar dan matikan kompor. Siap dihidangkan."
+        ]
+    },
+
+    "tahu-goreng": {
+        title: "Tahu Goreng",
+        cookTime: "15 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Tahu 55 gram",
+            "Garam 2 gram",
+            "Minyak kelapa sawit 2,5 gram",
+            "Bawang putih 6 gram",
+            "Air 200 mL"
+        ],
+        steps: [
+            "Haluskan bawang putih dan garam",
+            "Tambahkan air, aduk hingga rata",
+            "Potong tahu sesuai selera, lalu bolak balik tahu  agar bumbu meresap",
+            "Masukkan potongan tahu tersebut kedalam bumbunya, goreng hingga matang"
+        ]
+    },
+
+    "garlic-cheese-sandwich": {
+        title: "Garlic Cheese Sandwich",
+        cookTime: "15 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Roti tawar 40 gram",
+            "Keju slice 25 gram",
+            "Bawang putih bubuk 3 gram",
+            "Oregano 3 gram",
+            "Saus tomat 5 gram",
+            "Margarine 5 gram"
+        ],
+        steps: [
+            "Campur margarine dengan bawang putih bubuk dan oregano",
+            "Oleskan pada permukaan roti hingga merata",
+            "Panggang sebentar di teflon",
+            "Oleskan saus tomat pada permukaan roti dan tata keju slice"
+        ]
+    },
+
+    "mie-goreng-bakso-daging-sapi": {
+        title: "Mie Goreng Bakso Daging Sapi",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Garam 2 gram",
+            "Mie basah 150 gram",
+            "Bakso sapi 85 gram",
+            "Daging sapi 17,5 gram",
+            "Daun bawang 5 gram",
+            "Bawang putih 6 gram",
+            "Kecap asin 5 gram",
+            "Kecap ikan 5 gram",
+            "Kecap manis 10 gram",
+            "Saus tiram 10 gram",
+            "Minyak wijen 10 gram"
+        ],
+        steps: [
+            "Tumis bawang putih dan daun bawang hingga harum. Masukkan daging sapi dan bakso. Masak sampai berubah warna. Sisihkan pada pinggir wajan.",
+            "Masukkan mi. Aduk rata.",
+            "Bumbui dengan kecap asin, kecap ikan, kecap manis, saus tiram, dan garam.",
+            "Masukkan minyak wijen. Aduk rata. Sajikan"
+        ]
+    },
+
+    "sayur-bayam-merah": {
+        title: "Sayur Bayam Merah",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Bayam merah 100 gram",
+            "Jagung segar 30 gram",
+            "Kembang tahu 20 gram",
+            "Bawang putih 6 gram",
+            "Bawang bombay 30 gram",
+            "Air 200 gram",
+            "Kaldu ayam 2 gram",
+            "Daun salam 2 gram"
+        ],
+        steps: [
+            "Didihkan air. Lalu masukan bawang putih, jagung segar, dan bawang bombay. Didihkan sampai wangi.",
+            "Masukan daun salam. Aduk.",
+            "Masukan kembang tahu. Didihkan.",
+            "Masukan bayam. Aduk, didihkan.",
+            "Tambahkan bumbu-bumbu.",
+            "Tes rasa. Lalu sajikan."
+        ]
+    },
+
+    "smoothie-alpukat-oatmeal-susu": {
+        title: "Smoothie Alpukat + Oatmeal + Susu",
+        cookTime: "15 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Alpukat 60 gram",
+            "Madu 15 gram",
+            "Oatmeal 40 gram",
+            "Air panas 50 mL",
+            "Susu UHT 50 mL"
+        ],
+        steps: [
+            "Masukkan alpukat blender dengan susu UHT",
+            "Tuang air panas ke dalam mangkuk berisi oat, aduk rata hingga oar menjadi lunak",
+            "Tuangkan oatmeal & smoothies alpukat dalam mangkok"
+        ]
+    },
+
+    "tumis-labu-siam-tempe": {
+        title: "Tumis Labu Siam Tempe",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Labu siam 100 gram",
+            "Tempe 50 gram",
+            "Bawang putih 6 gram",
+            "Bawang merah 6 gram",
+            "Cabai merah besar 10 gram",
+            "Cabai rawit 4 gram",
+            "Gula 3 gram",
+            "Garam 3 gram",
+            "Air 50 mL"
+        ],
+        steps: [
+            "Potong dan cuci bersih labu siam",
+            "Potong tempe menjadi dadu",
+            "Potong bawang putih, bawang merah, cabai merah besar, cabai rawit. Lalu tumis hingga layu dan harum",
+            "Masukkan labu siam dan tempe, tambahkan air, koreksi rasa"
+        ]
+    },
+
+    "bakso-bakar": {
+        title: "Bakso Bakar",
+        cookTime: "30 menit",
+        servings: "1 porsi",
+        difficulty: "Mudah",
+        ingredients: [
+            "Bakso 150 gram",
+            "Saus sambal 15 gram",
+            "Kecap manis 2 gram",
+            "Kaldu bubuk 2 gram",
+            "Margarine 5 gram",
+            "Tusuk sate 5 tusuk"
+        ],
+        steps: [
+            "Tusuk bakso dengan tusuk sate",
+            "Olesi dengan margarin",
+            "Olesi grill pan dengan margarin",
+            "Bakar bakso hingga setengah matang",
+            "Campurkan saus sambal dan kecap manis dan oleskan ke bakso bakar setengah matang",
+            "Bakar kembali hingga matang"
+        ]
+    }
+};
+
+export default recipeData;

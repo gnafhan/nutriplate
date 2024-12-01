@@ -13,7 +13,7 @@ const Home = () => {
     {
       nama: "Resep Makanan",
       link: "/resep-makanan/normal",
-      deskripsi: "resep makanan normal",
+      deskripsi: "resep makanan ekslusif",
     },
     // {
     // nama: "Resep Diabetes",
